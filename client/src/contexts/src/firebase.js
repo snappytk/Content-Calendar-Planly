@@ -1,12 +1,11 @@
+// src/firebase.ts
 import { initializeApp } from "firebase/app";
 
-// Only import analytics if window is available
 let getAnalytics;
 if (typeof window !== "undefined") {
   getAnalytics = require("firebase/analytics").getAnalytics;
 }
 
-// Your config
 const firebaseConfig = {
   apiKey: "AIzaSyD4mTQ8gdn7ocwfpMBI0u9uhk9JjevzAVE",
   authDomain: "content-panner-planly.firebaseapp.com",
@@ -17,8 +16,8 @@ const firebaseConfig = {
   measurementId: "G-VQYG5FFGDV"
 };
 
-// Initialize
 const app = initializeApp(firebaseConfig);
+
 let analytics;
 if (getAnalytics) {
   analytics = getAnalytics(app);
